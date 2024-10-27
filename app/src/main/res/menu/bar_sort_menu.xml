@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bar_sort_ascend"
+        android:icon="@drawable/selector_tab"
+        android:title="@string/bar_menu_name_ascending" />
+
+    <item
+        android:id="@+id/bar_sort_descend"
+        android:icon="@drawable/selector_tab"
+        android:title="@string/bar_menu_name_descending" />
+
+</menu>

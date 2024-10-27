@@ -32,13 +32,18 @@ class RvAdapter (private var photoList: List<Demo>): RecyclerView.Adapter<RvAdap
 
 
     fun sortData(isAscend: Boolean){
+
+        var currentList: List<Demo>
+
         if (isAscend) {
 
-            photoList.sortedBy { it.photoId }
+            currentList = photoList.sortedBy { it.photoId }
         }else{
-            photoList.sortedByDescending { it.photoId }
+            currentList = photoList.sortedByDescending { it.photoId }
 
         }
+
+        photoList = currentList
 
         notifyDataSetChanged()
     }
