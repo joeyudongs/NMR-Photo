@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dheeraj.composemvvm.data.CreditCardRepository
+import com.dheeraj.composemvvm.model.Demo
 import kotlinx.coroutines.launch
 
 class CreditCardViewModel : ViewModel() {
@@ -27,4 +28,21 @@ class CreditCardViewModel : ViewModel() {
             }
         }
     }
+
+    fun sortPhoto(isAscend:Boolean){
+        var currentList: List<Demo>
+
+        if (isAscend) {
+
+            currentList = _creditCards.value?.photos?.sortedBy { it.photoId }!!
+        }else{
+            currentList = _creditCards.value?.photos?.sortedByDescending { it.photoId }!!
+
+        }
+
+        var cardResponse = CreditCardResponse(currentList)
+
+        _creditCards.value = cardResponse
+    }
+
 }

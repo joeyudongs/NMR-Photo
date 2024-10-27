@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.dheeraj.composemvvm.viewmodel.CreditCardViewModel
 
-class ComposeFragment : Fragment() {
+class ComposeFragment : BaseFragment() {
 
 
     private val viewModel: CreditCardViewModel by viewModels()
-
+    override fun sortData(isAscend: Boolean) {
+        viewModel.sortPhoto(isAscend)
+    }
 
 
     override fun onCreateView(
