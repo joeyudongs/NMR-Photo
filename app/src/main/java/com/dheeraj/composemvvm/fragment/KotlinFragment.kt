@@ -32,10 +32,18 @@ class KotlinFragment : BaseFragment() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = rvAdapter
+        binding.swipeRefreshLayout.isRefreshing = true
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            initData()
+        }
+
+
 
         initData()
 
         viewModel.creditCards.observe(viewLifecycleOwner, Observer { photos ->
+
+            binding.swipeRefreshLayout.isRefreshing = false
             rvAdapter.updateData(photos.photos)
 
         })
@@ -43,7 +51,6 @@ class KotlinFragment : BaseFragment() {
         return binding.root
     }
 
-    // Sort
     override fun sortData(isAscend: Boolean) {
         rvAdapter.sortData(isAscend)
     }

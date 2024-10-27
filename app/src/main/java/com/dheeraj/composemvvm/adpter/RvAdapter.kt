@@ -1,5 +1,6 @@
 package com.dheeraj.composemvvm.adpter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -49,16 +50,21 @@ class RvAdapter (private var photoList: List<Demo>): RecyclerView.Adapter<RvAdap
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = photoList[position]
+        val item = photoList[position]
         holder.binding.apply{
 
-            tvName.text = "Id: ${currentItem.photoId}"
+            tvName.text = "Rover: ${item.rover?.name.toString()}"
+            tvCaption.text = "LandingDate: ${item.rover?.landing_date.toString()}"
+            tvCameraName.text = "Status: ${item.rover?.status}"
+
+            tvEarthDate.text = "Camera: " + item.camera?.name.toString() + ", Earth Date: " + item.earth_date
+            tvPhotoId.text = "Photo Id: " + item.photoId
 
             ivRecipeItemImage.apply {
                 Glide.with(context)
-                    .load(currentItem.img_src)
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
+                    .load(item.img_src)
+                    .placeholder(R.mipmap.ic_photo_holder)
+                    .error(R.mipmap.ic_photo_holder)
                     .into(this)
             }
         }

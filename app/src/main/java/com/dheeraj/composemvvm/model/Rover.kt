@@ -4,12 +4,12 @@ data class Rover (
 
     var id          : Int?               = null,
     var name        : String?            = null,
-    var landingDate : String?            = null,
-    var launchDate  : String?            = null,
+    var landing_date : String?            = null,
+    var launch_date  : String?            = null,
     var status      : String?            = null,
-    var maxSol      : Int?               = null,
-    var maxDate     : String?            = null,
-    var totalPhotos : Int?               = null,
+    var max_sol      : Int?               = null,
+    var max_date     : String?            = null,
+    var total_photos : Int?               = null,
     var cameras     : ArrayList<Cameras> = arrayListOf()
 
 )
