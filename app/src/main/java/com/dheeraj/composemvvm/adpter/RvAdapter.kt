@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.dheeraj.composemvvm.DetailActivity
 import com.dheeraj.composemvvm.R
 import com.dheeraj.composemvvm.databinding.ItemRvBinding
 import com.dheeraj.composemvvm.model.Demo
@@ -66,6 +67,16 @@ class RvAdapter (private var photoList: List<Demo>): RecyclerView.Adapter<RvAdap
                     .placeholder(R.mipmap.ic_photo_holder)
                     .error(R.mipmap.ic_photo_holder)
                     .into(this)
+            }
+
+            holder.binding.root.setOnClickListener{
+                val intent = Intent(holder.binding.root.context,DetailActivity::class.java)
+                intent.putExtra("detail_image_url",item.img_src)
+                intent.putExtra("detail_photo_id",item.photoId)
+                intent.putExtra("detail_sol",item.sol)
+                intent.putExtra("detail_earth_date",item.earth_date)
+                holder.binding.root.context.startActivity(intent)
+
             }
         }
     }
