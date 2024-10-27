@@ -1,6 +1,7 @@
 package com.dheeraj.composemvvm.model
 
-data class Rover(
+data class Rover (
+
     var id          : Int?               = null,
     var name        : String?            = null,
     var landingDate : String?            = null,
@@ -10,4 +11,5 @@ data class Rover(
     var maxDate     : String?            = null,
     var totalPhotos : Int?               = null,
     var cameras     : ArrayList<Cameras> = arrayListOf()
+
 )
