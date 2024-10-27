@@ -2,7 +2,6 @@ package com.dheeraj.composemvvm.data
 
 import CreditCardResponse
 import com.dheeraj.composemvvm.service.RetrofitInstance
-import com.dheeraj.composemvvm.model.CreditCard
 
 
 class CreditCardRepository {
