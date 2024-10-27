@@ -1,24 +1,37 @@
 package com.dheeraj.composemvvm
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
-import androidx.activity.viewModels
+import android.transition.Explode
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.dheeraj.composemvvm.databinding.ActivityMainBinding
 import com.dheeraj.composemvvm.fragment.BaseFragment
 import com.dheeraj.composemvvm.fragment.ComposeFragment
 import com.dheeraj.composemvvm.fragment.KotlinFragment
-import com.dheeraj.composemvvm.viewmodel.ItemViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class MainActivity : AppCompatActivity(),BaseFragment.SortCallback {
-    // Using the viewModels() Kotlin property delegate from the activity-ktx
-    // artifact to retrieve the ViewModel in the activity scope.
-    private val viewModel: ItemViewModel by viewModels()
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window = window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = Color.BLACK
+
+            with(window) {
+                requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
+
+                // Set an exit transition
+                exitTransition = Explode()
+            }
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -27,6 +40,7 @@ class MainActivity : AppCompatActivity(),BaseFragment.SortCallback {
 
         val bar = binding.toolbar
 
+        bar.setBackgroundColor(resources.getColor(android.R.color.black))
         bar.inflateMenu(R.menu.bar_sort_menu)
 
         bar.setOnMenuItemClickListener { item ->
@@ -50,6 +64,7 @@ class MainActivity : AppCompatActivity(),BaseFragment.SortCallback {
                 .commit()
         }
 
+        bottomNavigationView.setBackgroundColor(resources.getColor(android.R.color.black))
         // Listener for BottomNavigationView item selection
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -82,3 +97,7 @@ class MainActivity : AppCompatActivity(),BaseFragment.SortCallback {
     }
 
 }
+
+
+
+
