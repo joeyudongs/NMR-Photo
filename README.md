@@ -1,5 +1,5 @@
 # NMR-Photo
-NMR-Photo is an Android app that queries and displays the Mars photos from NASA Mars Curiosity Rover. 
+NMR-Photo is an Android app that queries and displays the Mars photos from NASA Mars Curiosity Rover. You can browse Mars with NASA.
 
 # Libraries and technologies used
 - Language: Kotlin
