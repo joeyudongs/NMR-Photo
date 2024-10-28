@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NASA</string>
+    <string name="app_name">MARS</string>
     <string name="bottom_title_use_kt">Kotlin</string>
     <string name="bottom_title_use_compose">Compose</string>
     <string name="bar_menu_name_ascending">Ascend</string>

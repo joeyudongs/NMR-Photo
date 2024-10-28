@@ -1,9 +1,9 @@
 package com.dheeraj.composemvvm.service
 
-import CreditCardResponse
+import MarsPhotoResponse
 import retrofit2.http.GET
 
-interface CreditCardService {
+interface MarsPhotoService {
     @GET("photos?sol=1000&page=2&api_key=AyHYvkgDh4gCmDpuFPUj5kmc2nLHsJS5ikGGHKHe")
-    suspend fun getCreditCards(): CreditCardResponse
+    suspend fun getMarsPhoto(): MarsPhotoResponse
 }

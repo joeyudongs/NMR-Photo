@@ -1,5 +1,6 @@
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -31,18 +32,28 @@ import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import com.dheeraj.composemvvm.DetailActivity
 import com.dheeraj.composemvvm.model.Demo
-import com.dheeraj.composemvvm.viewmodel.CreditCardViewModel
+import com.dheeraj.composemvvm.viewmodel.MarsPhotoViewModel
 
 @Composable
-fun CreditCardScreen(viewModel: CreditCardViewModel) {
-    val creditCards by viewModel.creditCards.observeAsState(null)
+fun MarsPhotoScreen(viewModel: MarsPhotoViewModel) {
+    val marsPhoto by viewModel.marsPhotoResponseLiveData.observeAsState(null)
+    val errorMsg by viewModel.errorMessage.observeAsState(null)
+
+    // Get the current context
+    val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        viewModel.fetchCreditCards()
+        viewModel.fetchMarsPhoto()
+    }
+
+    LaunchedEffect(errorMsg) {
+        errorMsg?.let {
+            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+        }
     }
 
     Column {
-        if (creditCards == null) {
+        if (marsPhoto == null) {
             // Show loading indicator or placeholder
             Column(
                 modifier = Modifier
@@ -55,11 +66,10 @@ fun CreditCardScreen(viewModel: CreditCardViewModel) {
             }
         } else {
             // Display the list of credit cards
-            CreditCardItem(creditCards!!)
+            MarsPhotoItem(marsPhoto!!)
         }
     }
 }
-
 
 @Composable
 fun MarsSection(item: Demo) {
@@ -88,7 +98,6 @@ fun MarsSection(item: Demo) {
                 .clip(RoundedCornerShape(12.dp)),
             contentScale = ContentScale.Crop
         )
-
 
         Text(
             text = ("The Martian Solar Day：" + item.sol) ?: "",
@@ -124,7 +133,7 @@ fun MarsSection(item: Demo) {
 }
 
 @Composable
-fun CreditCardItem(creditCard: CreditCardResponse) {
+fun MarsPhotoItem(marsPhoto: MarsPhotoResponse) {
     Card(
         backgroundColor = Color.Black,
         modifier = Modifier
@@ -134,12 +143,11 @@ fun CreditCardItem(creditCard: CreditCardResponse) {
     ) {
 
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
-            items(creditCard.photos) {
+            items(marsPhoto.photos) {
                 when(it){
                     is Demo -> MarsSection(item = it)
                 }
             }
         }
-
     }
 }

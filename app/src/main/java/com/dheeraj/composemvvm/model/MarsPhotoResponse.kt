@@ -1,6 +1,6 @@
 import com.dheeraj.composemvvm.model.Demo
 
-data class CreditCardResponse(
+data class MarsPhotoResponse(
 
     val photos: List<Demo>
     /*val id: Int,

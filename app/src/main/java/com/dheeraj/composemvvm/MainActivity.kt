@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity(),BaseFragment.SortCallback {
         val bar = binding.toolbar
 
         bar.setBackgroundColor(resources.getColor(android.R.color.black))
+        bar.overflowIcon = resources.getDrawable(R.mipmap.ic_menu_sort)
         bar.inflateMenu(R.menu.bar_sort_menu)
 
         bar.setOnMenuItemClickListener { item ->
@@ -88,16 +89,10 @@ class MainActivity : AppCompatActivity(),BaseFragment.SortCallback {
     }
 
     override fun onSort(isAscend: Boolean) {
-        // find current fragment
         val currentFragment = supportFragmentManager.findFragmentById(R.id.frame_content)
         if (currentFragment is BaseFragment) {
-            // call the sort method
             currentFragment.sortData(isAscend)
         }
     }
 
 }
-
-
-
-

@@ -1,18 +1,18 @@
 package com.dheeraj.composemvvm.fragment
 
-import CreditCardScreen
+import MarsPhotoScreen
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.viewModels
-import com.dheeraj.composemvvm.viewmodel.CreditCardViewModel
+import com.dheeraj.composemvvm.viewmodel.MarsPhotoViewModel
 
 class ComposeFragment : BaseFragment() {
 
 
-    private val viewModel: CreditCardViewModel by viewModels()
+    private val viewModel: MarsPhotoViewModel by viewModels()
     override fun sortData(isAscend: Boolean) {
         viewModel.sortPhoto(isAscend)
     }
@@ -45,7 +45,7 @@ class ComposeFragment : BaseFragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                CreditCardScreen(viewModel)
+                MarsPhotoScreen(viewModel)
             }
         }
     }

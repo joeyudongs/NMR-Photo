@@ -1,9 +1,9 @@
 package com.dheeraj.composemvvm.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-
-data class Demo (
+data class Demo(
 
     @SerializedName("id" ) var photoId        : Int?,
     var sol       : Int?,
@@ -11,4 +11,4 @@ data class Demo (
     var img_src    : String?,
     var earth_date : String?,
     var rover     : Rover?  = Rover()
-)
+): Serializable

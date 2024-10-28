@@ -7,4 +7,9 @@
 
     </style>
 
+    <style name="footButton" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/gray</item>
+    </style>
+
 </resources>

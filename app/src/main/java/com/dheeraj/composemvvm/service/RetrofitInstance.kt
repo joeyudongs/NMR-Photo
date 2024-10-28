@@ -13,7 +13,7 @@ object RetrofitInstance {
             .build()
     }
 
-    val creditCardService: CreditCardService by lazy {
-        retrofit.create(CreditCardService::class.java)
+    val marsPhotoService: MarsPhotoService by lazy {
+        retrofit.create(MarsPhotoService::class.java)
     }
 }

@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/nav_compose"
-        android:icon="@drawable/selector_tab"
+        android:icon="@drawable/selector_tab_b"
         android:title="@string/bottom_title_use_compose" />
 
 </menu>
