@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dheeraj.composemvvm.adpter.RvAdapter
 import com.dheeraj.composemvvm.databinding.FragmentKotlinBinding
-import com.dheeraj.composemvvm.model.Demo
+import com.example.lib_network.service.model.Demo
 import com.dheeraj.composemvvm.viewmodel.MarsPhotoViewModel
 
 class KotlinFragment : BaseFragment() {

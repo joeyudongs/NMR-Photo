@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.dheeraj.composemvvm.DetailActivity
 import com.dheeraj.composemvvm.R
 import com.dheeraj.composemvvm.databinding.ItemRvBinding
-import com.dheeraj.composemvvm.model.Demo
+import com.example.lib_network.service.model.Demo
 
 class RvAdapter (private var photoList: List<Demo>): RecyclerView.Adapter<RvAdapter.ViewHolder>() {
 

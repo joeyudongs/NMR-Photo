@@ -1,4 +1,4 @@
-package com.dheeraj.composemvvm.model
+package com.example.lib_network.service.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

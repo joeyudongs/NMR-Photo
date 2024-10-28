@@ -1,7 +1,7 @@
 package com.dheeraj.composemvvm.data
 
 import MarsPhotoResponse
-import com.dheeraj.composemvvm.service.RetrofitInstance
+import com.example.lib_network.service.RetrofitInstance
 
 
 class MarsPhotoRepository {

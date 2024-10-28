@@ -1,4 +1,4 @@
-package com.dheeraj.composemvvm.service
+package com.example.lib_network.service
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

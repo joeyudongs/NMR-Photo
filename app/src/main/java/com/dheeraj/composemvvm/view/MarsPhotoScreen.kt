@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import com.dheeraj.composemvvm.DetailActivity
-import com.dheeraj.composemvvm.model.Demo
+import com.example.lib_network.service.model.Demo
 import com.dheeraj.composemvvm.viewmodel.MarsPhotoViewModel
 
 @Composable

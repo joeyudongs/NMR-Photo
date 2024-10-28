@@ -1,4 +1,4 @@
-package com.dheeraj.composemvvm.service
+package com.example.lib_network.service
 
 import MarsPhotoResponse
 import retrofit2.http.GET

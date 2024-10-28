@@ -1,4 +1,4 @@
-import com.dheeraj.composemvvm.model.Demo
+import com.example.lib_network.service.model.Demo
 
 data class MarsPhotoResponse(
 

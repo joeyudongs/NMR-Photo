@@ -1,5 +1,4 @@
-package com.dheeraj.composemvvm.model
-
+package com.example.lib_network.service.model
 
 data class Camera (
 

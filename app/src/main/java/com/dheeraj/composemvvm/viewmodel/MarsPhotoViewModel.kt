@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dheeraj.composemvvm.data.MarsPhotoRepository
-import com.dheeraj.composemvvm.model.Demo
+import com.example.lib_network.service.model.Demo
 import kotlinx.coroutines.launch
 
 class MarsPhotoViewModel : ViewModel() {
