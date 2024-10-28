@@ -1,5 +1,7 @@
 
+import android.content.Intent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,10 +24,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
+import com.dheeraj.composemvvm.DetailActivity
 import com.dheeraj.composemvvm.model.Demo
 import com.dheeraj.composemvvm.viewmodel.CreditCardViewModel
 
@@ -55,20 +59,37 @@ fun CreditCardScreen(viewModel: CreditCardViewModel) {
         }
     }
 }
-
-
+//fun toDetail(item: Demo){
+//    val intent = Intent(LocalContext.current, DetailActivity::class.java)
+//    intent.putExtra("detail_image_url",item.img_src)
+//    intent.putExtra("detail_photo_id",item.photoId)
+//    intent.putExtra("detail_sol",item.sol)
+//    intent.putExtra("detail_earth_date",item.earth_date)
+//    LocalContext.current.startActivity(intent)
+//}
 
 @Composable
 fun MarsSection(item: Demo) {
+    val context = LocalContext.current
+
     Box(
 
         modifier = Modifier.padding(start = 32.dp,top = 16.dp, end = 32.dp)
+            .clickable {
+
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("detail_image_url",item.img_src)
+                intent.putExtra("detail_photo_id",item.photoId)
+                intent.putExtra("detail_sol",item.sol)
+                intent.putExtra("detail_earth_date",item.earth_date)
+                context.startActivity(intent)
+            }
 
     ) {
         SubcomposeAsyncImage(
             model = item.img_src ,
             /*loading = {
-                CircularProgressIndicator()
+                CircularProgressIndicator() // 圆形进度条
             },*/
             contentDescription = "",
             modifier = Modifier
