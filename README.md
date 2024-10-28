@@ -12,6 +12,7 @@ NMR-Photo is an Android app that queries and displays the Mars photos from NASA 
 - Architecture : MVVM.
 - Error Handling.
 - Clickable. 
+- Network Module.
 
 # Preview 
 - RecyclerView Tab: 
