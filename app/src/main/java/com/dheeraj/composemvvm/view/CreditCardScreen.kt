@@ -59,14 +59,7 @@ fun CreditCardScreen(viewModel: CreditCardViewModel) {
         }
     }
 }
-//fun toDetail(item: Demo){
-//    val intent = Intent(LocalContext.current, DetailActivity::class.java)
-//    intent.putExtra("detail_image_url",item.img_src)
-//    intent.putExtra("detail_photo_id",item.photoId)
-//    intent.putExtra("detail_sol",item.sol)
-//    intent.putExtra("detail_earth_date",item.earth_date)
-//    LocalContext.current.startActivity(intent)
-//}
+
 
 @Composable
 fun MarsSection(item: Demo) {
@@ -88,9 +81,6 @@ fun MarsSection(item: Demo) {
     ) {
         SubcomposeAsyncImage(
             model = item.img_src ,
-            /*loading = {
-                CircularProgressIndicator() // 圆形进度条
-            },*/
             contentDescription = "",
             modifier = Modifier
                 .requiredHeight(height = 220.dp)
@@ -98,11 +88,6 @@ fun MarsSection(item: Demo) {
                 .clip(RoundedCornerShape(12.dp)),
             contentScale = ContentScale.Crop
         )
-        /*Image(
-            painter = painterResource(id = R.mipmap.video_play),
-            "play icon",
-            modifier = Modifier.align(Alignment.Center)
-        )*/
 
 
         Text(
@@ -144,7 +129,8 @@ fun CreditCardItem(creditCard: CreditCardResponse) {
         backgroundColor = Color.Black,
         modifier = Modifier
             .fillMaxWidth(),
-        elevation = 4.dp
+        elevation = 4.dp,
+        shape = RectangleShape
     ) {
 
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
@@ -155,27 +141,5 @@ fun CreditCardItem(creditCard: CreditCardResponse) {
             }
         }
 
-
-        /*
-                Column(
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .fillMaxWidth()
-                ) {
-                    Text(
-                        text = "creditCard.photos",
-                        style = MaterialTheme.typography.h6
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = "Expiry Date: ",
-                        style = MaterialTheme.typography.body1
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = "creditCard.credit_card_type",
-                        style = MaterialTheme.typography.body1
-                    )
-                }*/
     }
 }
