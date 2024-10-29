@@ -61,6 +61,8 @@ class RvAdapter (private var photoList: List<Demo>): RecyclerView.Adapter<RvAdap
 
             tvEarthDate.text = "Earth Date: " + item.earth_date
             tvPhotoId.text = "Photo Id: " + item.photoId
+            tvName.text = "Rover: ${item.rover?.name.toString()}"
+            tvCaption.text = "LandingDate: ${item.rover?.landing_date.toString()}"
 
             ivRecipeItemImage.apply {
                 Glide.with(context)

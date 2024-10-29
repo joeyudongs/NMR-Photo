@@ -64,6 +64,23 @@
                     android:textColor="@android:color/white"
                     tools:text="Here’s what you need to know to start your day." />
 
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textColor="@android:color/white"
+                    tools:text="recipes title ........... this is a sample text " />
+
+                <TextView
+                    android:id="@+id/tv_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="2"
+                    android:textColor="@android:color/white"
+                    tools:text="Here’s what you need to know to start your day." />
+
                 <RelativeLayout
                     android:id="@+id/rl_bt_anim"
                     android:background="@drawable/green_button_background_ripple"
