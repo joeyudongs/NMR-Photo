@@ -46,9 +46,8 @@
                 app:layout_constraintLeft_toRightOf="@id/iv_recipe_item_image"
                 app:layout_constraintRight_toRightOf="parent"
                 >
-
                 <TextView
-                    android:id="@+id/tv_name"
+                    android:id="@+id/tv_earth_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -57,37 +56,40 @@
                     tools:text="recipes title ........... this is a sample text " />
 
                 <TextView
-                    android:id="@+id/tv_caption"
+                    android:id="@+id/tv_photo_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:maxLines="2"
                     android:textColor="@android:color/white"
                     tools:text="Here’s what you need to know to start your day." />
-                <TextView
-                    android:id="@+id/tv_camera_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+
+                <RelativeLayout
+                    android:id="@+id/rl_bt_anim"
+                    android:background="@drawable/green_button_background_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
                     android:layout_marginTop="8dp"
-                    android:maxLines="2"
-                    android:textColor="@android:color/white"
-                    tools:text="Here’s what you need to know to start your day." />
-                <TextView
-                    android:id="@+id/tv_earth_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:maxLines="2"
-                    android:textColor="@android:color/white"
-                    tools:text="Here’s what you need to know to start your day." />
-                <TextView
-                    android:id="@+id/tv_photo_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:maxLines="2"
-                    android:textColor="@android:color/white"
-                    tools:text="Here’s what you need to know to start your day." />
+                    android:layout_marginRight="24dp">
+
+                    <TextView
+                        android:id="@+id/tv_bt"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bt_view_detail"
+                        android:textColor="@color/black"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/button_animation"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:visibility="gone"
+                        app:lottie_autoPlay="false"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/button_loading"/>
+
+                </RelativeLayout>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
