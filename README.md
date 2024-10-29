@@ -45,3 +45,8 @@ NMR-Photo is an Android app that queries and displays the Mars photos from NASA 
 <p align="center">
   <img src="https://github.com/joeyudongs/NMR-Photo/blob/master/screens/NoConnection2.png" width="350" title="hover text">
 </p>
+
+- Button Animation:
+<p align="center">
+  <img src="https://github.com/joeyudongs/NMR-Photo/blob/master/screens/buttonanimations.png" width="350" title="hover text">
+</p>
